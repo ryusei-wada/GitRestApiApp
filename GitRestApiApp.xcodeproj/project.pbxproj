@@ -17,6 +17,7 @@
 		1B0A9F2A276891D400A53B6D /* GitRestApiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F29276891D400A53B6D /* GitRestApiAppUITests.swift */; };
 		1B0A9F2C276891D400A53B6D /* GitRestApiAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F2B276891D400A53B6D /* GitRestApiAppUITestsLaunchTests.swift */; };
 		1B0A9F392768976400A53B6D /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F382768976400A53B6D /* ResultView.swift */; };
+		1B0A9F3B2768AB1B00A53B6D /* GitApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F3A2768AB1B00A53B6D /* GitApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		1B0A9F29276891D400A53B6D /* GitRestApiAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRestApiAppUITests.swift; sourceTree = "<group>"; };
 		1B0A9F2B276891D400A53B6D /* GitRestApiAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRestApiAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1B0A9F382768976400A53B6D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		1B0A9F3A2768AB1B00A53B6D /* GitApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				1B0A9F09276891CF00A53B6D /* GitRestApiApp.swift */,
 				1B0A9F0B276891CF00A53B6D /* ContentView.swift */,
 				1B0A9F382768976400A53B6D /* ResultView.swift */,
+				1B0A9F3A2768AB1B00A53B6D /* GitApi.swift */,
 				1B0A9F0D276891D300A53B6D /* Assets.xcassets */,
 				1B0A9F12276891D300A53B6D /* Persistence.swift */,
 				1B0A9F14276891D300A53B6D /* GitRestApiApp.xcdatamodeld */,
@@ -271,6 +274,7 @@
 				1B0A9F392768976400A53B6D /* ResultView.swift in Sources */,
 				1B0A9F0A276891CF00A53B6D /* GitRestApiApp.swift in Sources */,
 				1B0A9F16276891D300A53B6D /* GitRestApiApp.xcdatamodeld in Sources */,
+				1B0A9F3B2768AB1B00A53B6D /* GitApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

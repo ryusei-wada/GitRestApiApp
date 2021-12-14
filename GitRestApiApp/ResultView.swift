@@ -8,37 +8,6 @@
 import SwiftUI
 import Combine
 
-enum API {
-    static func search(page: Int, perPage: Int, query: String) -> AnyPublisher<[Repository], Error> {
-        let url = URL(string: "https://api.github.com/search/repositories?q=\(query)&sort=stars&page=\(page)&per_page=\(perPage)")!
-        return URLSession.shared
-            .dataTaskPublisher(for: url)
-            .tryMap { try JSONDecoder().decode(Result.self, from: $0.data).items }
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
-    }
-}
-
-struct Result: Codable {
-    let items: [Repository]
-}
-
-struct Repository: Codable, Identifiable, Equatable {
-    let id: Int
-    let name: String
-    let description: String?
-    let url: String
-    let stargazersCount: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case description
-        case url = "html_url"
-        case stargazersCount = "stargazers_count"
-    }
-}
-
 struct ResultView: View {
     @State private var repositories: [Repository] = []
     @State private var subscriptions = Set<AnyCancellable>()
@@ -51,25 +20,29 @@ struct ResultView: View {
             List(repositories) { repository in
                 VStack(alignment: .leading) {
                     Text(repository.name)
-                        .font(Font.system(size: 24).bold())
+                        .font(.title2)
+                        .fontWeight(.bold)
                         .foregroundColor(Color.pink)
                         
                     Text("Description")
-                        .fontWeight(.bold)
+                        .font(.headline)
                         .italic()
                     Text(repository.description ?? "")
+                        .font(.body)
                     Text("URL")
-                        .fontWeight(.bold)
+                        .font(.headline)
                         .italic()
                     Text(repository.url)
+                        .font(.body)
                     Text("⭐️")
-                        .fontWeight(.bold)
+                        .font(.headline)
                         .italic()
                     Text(" \(repository.stargazersCount)")
+                        .font(.body)
                 }
             }
         }
-        .navigationBarTitle("search query : \(query)")
+        .navigationBarTitle("query : \(query)")
         .onAppear {
             API.search(page: 1, perPage: 30, query: query)
                 .sink(receiveCompletion: { completion in
