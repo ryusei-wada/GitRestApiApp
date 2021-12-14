@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B0A9F0A276891CF00A53B6D /* GitRestApiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F09276891CF00A53B6D /* GitRestApiAppApp.swift */; };
+		1B0A9F0A276891CF00A53B6D /* GitRestApiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F09276891CF00A53B6D /* GitRestApiApp.swift */; };
 		1B0A9F0C276891CF00A53B6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F0B276891CF00A53B6D /* ContentView.swift */; };
 		1B0A9F0E276891D300A53B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A9F0D276891D300A53B6D /* Assets.xcassets */; };
 		1B0A9F11276891D300A53B6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A9F10276891D300A53B6D /* Preview Assets.xcassets */; };
@@ -16,6 +16,7 @@
 		1B0A9F20276891D400A53B6D /* GitRestApiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F1F276891D400A53B6D /* GitRestApiAppTests.swift */; };
 		1B0A9F2A276891D400A53B6D /* GitRestApiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F29276891D400A53B6D /* GitRestApiAppUITests.swift */; };
 		1B0A9F2C276891D400A53B6D /* GitRestApiAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F2B276891D400A53B6D /* GitRestApiAppUITestsLaunchTests.swift */; };
+		1B0A9F392768976400A53B6D /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A9F382768976400A53B6D /* ResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		1B0A9F06276891CF00A53B6D /* GitRestApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitRestApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B0A9F09276891CF00A53B6D /* GitRestApiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRestApiAppApp.swift; sourceTree = "<group>"; };
+		1B0A9F09276891CF00A53B6D /* GitRestApiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRestApiApp.swift; sourceTree = "<group>"; };
 		1B0A9F0B276891CF00A53B6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1B0A9F0D276891D300A53B6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B0A9F10276891D300A53B6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 		1B0A9F25276891D400A53B6D /* GitRestApiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitRestApiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0A9F29276891D400A53B6D /* GitRestApiAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRestApiAppUITests.swift; sourceTree = "<group>"; };
 		1B0A9F2B276891D400A53B6D /* GitRestApiAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRestApiAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1B0A9F382768976400A53B6D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +100,9 @@
 		1B0A9F08276891CF00A53B6D /* GitRestApiApp */ = {
 			isa = PBXGroup;
 			children = (
-				1B0A9F09276891CF00A53B6D /* GitRestApiAppApp.swift */,
+				1B0A9F09276891CF00A53B6D /* GitRestApiApp.swift */,
 				1B0A9F0B276891CF00A53B6D /* ContentView.swift */,
+				1B0A9F382768976400A53B6D /* ResultView.swift */,
 				1B0A9F0D276891D300A53B6D /* Assets.xcassets */,
 				1B0A9F12276891D300A53B6D /* Persistence.swift */,
 				1B0A9F14276891D300A53B6D /* GitRestApiApp.xcdatamodeld */,
@@ -265,7 +268,8 @@
 			files = (
 				1B0A9F13276891D300A53B6D /* Persistence.swift in Sources */,
 				1B0A9F0C276891CF00A53B6D /* ContentView.swift in Sources */,
-				1B0A9F0A276891CF00A53B6D /* GitRestApiAppApp.swift in Sources */,
+				1B0A9F392768976400A53B6D /* ResultView.swift in Sources */,
+				1B0A9F0A276891CF00A53B6D /* GitRestApiApp.swift in Sources */,
 				1B0A9F16276891D300A53B6D /* GitRestApiApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  GitRestApiAppApp.swift
+//  GitRestApiApp.swift
 //  GitRestApiApp
 //
 //  Created by Ryusei Wada on 2021/12/14.
