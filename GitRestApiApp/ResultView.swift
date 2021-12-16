@@ -48,9 +48,10 @@ struct ResultView: View {
         }
         .navigationBarTitle("query : \(query)")
         .onAppear {
-            // search() -> AnyPublisher<[Repository],Error>
+            /// 取得したリポジトリ情報のPublisher
             let publisher = API.search(page: 1, perPage: 30, query: query)
 
+            /// リポジトリ情報をSubscribeしてrepositoriesに格納するSubscriber
             let subscriber = Subscribers.Sink<[Repository], Error>(
                 receiveCompletion: { completion in
                     switch completion {
@@ -66,8 +67,10 @@ struct ResultView: View {
                     self.repositories = repositories
                 })
             
+            // subscribeをキャンセルするためのトークンをstore
             subscriber.store(in: &self.cancellables)
             
+            // subscribe登録
             publisher.subscribe(subscriber)
         }
         .alert(isPresented: self.$showingAlert) {
