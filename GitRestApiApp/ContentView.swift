@@ -10,6 +10,7 @@ import CoreData
 
 
 struct ContentView: View {
+    /// 検索クエリ
     @State private var query = ""
     
     var body: some View {

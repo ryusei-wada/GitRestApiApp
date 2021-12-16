@@ -10,7 +10,8 @@ import Combine
 
 struct ResultView: View {
     @State private var repositories: [Repository] = []
-    @State private var subscriptions = Set<AnyCancellable>()
+    /// キャンセル用トークン
+    @State private var cancellables = Set<AnyCancellable>()
     @State private var showingAlert = false
     @State private var errorMessage = ""
     let query : String
@@ -44,19 +45,21 @@ struct ResultView: View {
         }
         .navigationBarTitle("query : \(query)")
         .onAppear {
+            // search() -> AnyPublisher<[Repository],Error>
             API.search(page: 1, perPage: 30, query: query)
                 .sink(receiveCompletion: { completion in
                     switch completion {
                     case .finished:
                         break
                     case let .failure(error):
+                        // 失敗時
                         self.showingAlert = true
                         self.errorMessage = error.localizedDescription
                     }
                 }, receiveValue: { repositories in
                     self.repositories = repositories
                 })
-                .store(in: &self.subscriptions)
+                .store(in: &self.cancellables)
         }
         .alert(isPresented: self.$showingAlert) {
             Alert(
