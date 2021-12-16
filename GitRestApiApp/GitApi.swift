@@ -23,6 +23,15 @@ struct Result: Codable {
     let items: [Repository]
 }
 
+/// リポジトリ情報格納用の構造体
+///
+/// {
+/// id,
+/// name,
+/// description,
+/// url,
+/// stargazersCount
+/// }
 struct Repository: Codable, Identifiable, Equatable {
     let id: Int
     let name: String

@@ -9,10 +9,13 @@ import SwiftUI
 import Combine
 
 struct ResultView: View {
+    /// 検索結果格納用配列
     @State private var repositories: [Repository] = []
     /// キャンセル用トークン
     @State private var cancellables = Set<AnyCancellable>()
+    /// アラート表示フラグ
     @State private var showingAlert = false
+    /// アラート表示用エラーメッセージ
     @State private var errorMessage = ""
     let query : String
     
@@ -46,8 +49,10 @@ struct ResultView: View {
         .navigationBarTitle("query : \(query)")
         .onAppear {
             // search() -> AnyPublisher<[Repository],Error>
-            API.search(page: 1, perPage: 30, query: query)
-                .sink(receiveCompletion: { completion in
+            let publisher = API.search(page: 1, perPage: 30, query: query)
+
+            let subscriber = Subscribers.Sink<[Repository], Error>(
+                receiveCompletion: { completion in
                     switch completion {
                     case .finished:
                         break
@@ -56,10 +61,14 @@ struct ResultView: View {
                         self.showingAlert = true
                         self.errorMessage = error.localizedDescription
                     }
-                }, receiveValue: { repositories in
+                },
+                receiveValue: { repositories in
                     self.repositories = repositories
                 })
-                .store(in: &self.cancellables)
+            
+            subscriber.store(in: &self.cancellables)
+            
+            publisher.subscribe(subscriber)
         }
         .alert(isPresented: self.$showingAlert) {
             Alert(
@@ -72,6 +81,6 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(query: "swift")
+        ResultView(query: "java")
     }
 }
